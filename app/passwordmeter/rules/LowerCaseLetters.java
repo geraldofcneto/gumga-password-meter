@@ -10,6 +10,12 @@ public class LowerCaseLetters extends RegexRule {
 
     @Override
     String getRegex() {
-        return "[a-z]+";
+        return "[a-z]";
     }
+
+    @Override
+    public String description() {
+        return "Lowercase Letters";
+    }
+
 }

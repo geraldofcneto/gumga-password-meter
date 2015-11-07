@@ -19,10 +19,24 @@ public class PasswordMeter {
         rules.add(new NumberOfChars(password));
         rules.add(new UpperCaseLetters(password));
         rules.add(new LowerCaseLetters(password));
+        rules.add(new Numbers(password));
+        rules.add(new Symbols(password));
+        rules.add(new MiddleNumberOrSymbol(password));
+
+
         rules.add(new LettersOnly(password));
     }
 
     public Integer score() {
         return rules.stream().mapToInt(Rule::score).sum();
+    }
+
+    @Override
+    public String toString() {
+        StringBuffer sb = new StringBuffer();
+        for (Rule r : rules) {
+            sb.append(r.description() + ":" + r.score() +", ");
+        }
+        return sb.toString();
     }
 }

@@ -20,4 +20,9 @@ public class NumberOfChars implements Rule {
     public Integer score(){
         return numberOfChars() * 4;
     }
+
+    @Override
+    public String description() {
+        return "Numbers of Chars";
+    }
 }

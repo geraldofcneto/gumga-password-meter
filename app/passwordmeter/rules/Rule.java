@@ -5,4 +5,5 @@ package passwordmeter.rules;
  */
 public interface Rule {
     Integer score();
+    String description();
 }

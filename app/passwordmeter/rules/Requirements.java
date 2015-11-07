@@ -3,20 +3,21 @@ package passwordmeter.rules;
 /**
  * Created by geraldo on 07/11/15.
  */
-public class LettersOnly implements Rule{
-    private String a;
+public class Requirements implements Rule{
 
-    public LettersOnly(String a) {
-        this.a = a;
+    private String s;
+
+    public Requirements(String s) {
+        this.s = s;
     }
 
     @Override
     public Integer score() {
-        return - a.length();
+        return 0;
     }
 
     @Override
     public String description() {
-        return "Letters Only";
+        return "Requirements";
     }
 }

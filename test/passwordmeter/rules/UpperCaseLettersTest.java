@@ -11,15 +11,10 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class UpperCaseLettersTest {
 
     @Test
-    public void testNumberOfUpperCaseLetters() throws Exception {
-        assertThat(new UpperCaseLetters("AaBbCc").numberOfUpperCaseLetters(), is(3));
-    }
-
-    @Test
     public void testUpperCaseLetters(){
         UpperCaseLetters upperCaseLetters = new UpperCaseLetters("AaBbCc");
-        assertThat(upperCaseLetters.upperCaseLetters(), is("ABC"));
-        assertThat(upperCaseLetters.score(), is(3));
+        assertThat(upperCaseLetters.numberOfFoundChars(), is(3));
+        assertThat(upperCaseLetters.score(), is(6));
     }
 
     @Test
@@ -29,9 +24,9 @@ public class UpperCaseLettersTest {
 
     @Test
     public void testNumberOfUpperCaseLetters_withoutUppercaseLetters_score0() throws Exception {
-        UpperCaseLetters upperCaseLetters = new UpperCaseLetters("abcde123456!@#$");
-        assertThat(upperCaseLetters.upperCaseLetters(), is(""));
-        assertThat(upperCaseLetters.score(), is(0));
+        UpperCaseLetters upperCaseLetters = new UpperCaseLetters("abcde12345!@#$~");
+        assertThat(upperCaseLetters.numberOfFoundChars(), is(0));
+        assertThat(upperCaseLetters.score(), is(30));
     }
 
 }
