@@ -5,18 +5,18 @@ import java.util.function.Predicate;
 /**
  * Created by geraldo on 08/11/15.
  */
-public class SequentialLetters extends SequentialChars {
+public class SequentialSymbols extends SequentialChars {
 
-    public SequentialLetters(String s) {
+    public SequentialSymbols(String s) {
         super(s);
     }
 
     Predicate<Character> criteria(){
-        return c -> Character.isAlphabetic(c);
+        return c -> !Character.isLetterOrDigit(c);
     }
 
     @Override
     public String description() {
-        return "Sequential Letters (3+)";
+        return "Sequential Symbols (3+)";
     }
 }

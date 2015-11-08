@@ -26,12 +26,13 @@ public class PasswordMeter {
 
         rules.add(new LettersOnly(password));
         rules.add(new NumbersOnly(password));
-//        rules.add(new RepeatedChars(password));
+        rules.add(new RepeatedChars(password));
         rules.add(new ConsecutiveUpperCaseLetters(password));
         rules.add(new ConsecutiveLowerCaseLetters(password));
         rules.add(new ConsecutiveNumbers(password));
         rules.add(new SequentialLetters(password));
-//        rules.add(new SequentialNumbers(password));
+        rules.add(new SequentialNumbers(password));
+        rules.add(new SequentialSymbols(password));
 
     }
 

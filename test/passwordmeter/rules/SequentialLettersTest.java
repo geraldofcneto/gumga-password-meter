@@ -27,8 +27,23 @@ public class SequentialLettersTest {
     }
 
     @Test
+    public void testWith6CharsString(){
+        assertThat(new SequentialLetters("abcdef").score(), is(-12));
+    }
+
+    @Test
+    public void testWith3CharsReversedString(){
+        assertThat(new SequentialLetters("cba").score(), is(-3));
+    }
+
+    @Test
     public void testWith2ConsecutiveGroups(){
         assertThat(new SequentialLetters("abcefg").score(), is(-6));
+    }
+
+    @Test
+    public void testWith2ConsecutiveMixedOrderGroups(){
+        assertThat(new SequentialLetters("abcgfe").score(), is(-6));
     }
 
     @Test
@@ -44,7 +59,6 @@ public class SequentialLettersTest {
         assertThat(new SequentialLetters("abc").criteria().test('z'), is(true));
     }
 
-    @Ignore
     @Test
     public void testWith3CharsOnLimitString(){
         assertThat(new SequentialLetters("`ab").score(), is(0));
