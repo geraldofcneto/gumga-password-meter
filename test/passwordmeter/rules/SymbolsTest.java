@@ -35,4 +35,28 @@ public class SymbolsTest {
         assertThat(new Symbols("+-.,!@#$%^&*();\\/|<>\"'").score(), is(132));
     }
 
+    @Test
+    public void testIsMetWithEmptyString(){
+        assertThat(new Symbols("").isMet(), is(false));
+    }
+
+    @Test
+    public void testIsMetWithNumericString(){
+        assertThat(new Symbols("1").isMet(), is(false));
+    }
+
+    @Test
+    public void testIsMetWithAlphaString(){
+        assertThat(new Symbols("a").isMet(), is(false));
+    }
+
+    @Test
+    public void testIsMetWithUppercaseAlphaString(){
+        assertThat(new Symbols("A").isMet(), is(false));
+    }
+
+    @Test
+    public void testIsMetWithSymbolString(){
+        assertThat(new Symbols("@").isMet(), is(true));
+    }
 }

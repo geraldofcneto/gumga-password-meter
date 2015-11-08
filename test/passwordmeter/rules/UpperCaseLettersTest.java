@@ -29,4 +29,28 @@ public class UpperCaseLettersTest {
         assertThat(upperCaseLetters.score(), is(30));
     }
 
+    @Test
+    public void testIsMetWithEmptyString(){
+        assertThat(new UpperCaseLetters("").isMet(), is(false));
+    }
+
+    @Test
+    public void testIsMetWithNumericString(){
+        assertThat(new UpperCaseLetters("1").isMet(), is(false));
+    }
+
+    @Test
+    public void testIsMetWithAlphaString(){
+        assertThat(new UpperCaseLetters("a").isMet(), is(false));
+    }
+
+    @Test
+    public void testIsMetWithUppercaseAlphaString(){
+        assertThat(new UpperCaseLetters("A").isMet(), is(true));
+    }
+
+    @Test
+    public void testIsMetWithSymbolString(){
+        assertThat(new UpperCaseLetters("@").isMet(), is(false));
+    }
 }

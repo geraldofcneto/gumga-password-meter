@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 /**
  * Created by geraldo on 07/11/15.
  */
-public class UpperCaseLetters extends RegexRule{
+public class UpperCaseLetters extends RegexRule implements Requirement {
     public UpperCaseLetters(String a) {
         super(a);
     }
@@ -19,5 +19,10 @@ public class UpperCaseLetters extends RegexRule{
     @Override
     public String description() {
         return "UpperCase Letters";
+    }
+
+    @Override
+    public Boolean isMet() {
+        return numberOfFoundChars() > 0;
     }
 }

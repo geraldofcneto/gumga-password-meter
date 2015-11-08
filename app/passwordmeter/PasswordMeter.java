@@ -22,9 +22,10 @@ public class PasswordMeter {
         rules.add(new Numbers(password));
         rules.add(new Symbols(password));
         rules.add(new MiddleNumberOrSymbol(password));
-
+        rules.add(new Requirements(password));
 
         rules.add(new LettersOnly(password));
+        rules.add(new NumbersOnly(password));
     }
 
     public Integer score() {

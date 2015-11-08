@@ -3,7 +3,7 @@ package passwordmeter.rules;
 /**
  * Created by geraldo on 07/11/15.
  */
-public class Symbols extends RegexRule {
+public class Symbols extends RegexRule implements Requirement {
 
     public Symbols(String a) {
         super(a);
@@ -22,5 +22,10 @@ public class Symbols extends RegexRule {
     @Override
     public Integer score() {
         return numberOfFoundChars()*6;
+    }
+
+    @Override
+    public Boolean isMet() {
+        return numberOfFoundChars() > 0;
     }
 }

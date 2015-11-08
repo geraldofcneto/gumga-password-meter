@@ -3,7 +3,7 @@ package passwordmeter.rules;
 /**
  * Created by geraldo on 07/11/15.
  */
-public class LowerCaseLetters extends RegexRule {
+public class LowerCaseLetters extends RegexRule implements Requirement {
     public LowerCaseLetters(String a) {
         super(a);
     }
@@ -18,4 +18,8 @@ public class LowerCaseLetters extends RegexRule {
         return "Lowercase Letters";
     }
 
+    @Override
+    public Boolean isMet() {
+        return numberOfFoundChars() > 0;
+    }
 }

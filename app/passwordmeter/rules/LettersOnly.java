@@ -1,18 +1,19 @@
 package passwordmeter.rules;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Created by geraldo on 07/11/15.
  */
-public class LettersOnly implements Rule{
-    private String a;
-
-    public LettersOnly(String a) {
-        this.a = a;
+public class LettersOnly extends ExclusiveRegexRule{
+    public LettersOnly(String s) {
+        super(s);
     }
 
     @Override
-    public Integer score() {
-        return - a.length();
+    public String getRegex() {
+        return "[a-zA-Z]+";
     }
 
     @Override

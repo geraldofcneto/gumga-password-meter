@@ -3,7 +3,7 @@ package passwordmeter.rules;
 /**
  * Created by geraldo on 07/11/15.
  */
-public class Numbers extends RegexRule {
+public class Numbers extends RegexRule implements Requirement {
 
     public Numbers(String a) {
         super(a);
@@ -24,4 +24,8 @@ public class Numbers extends RegexRule {
         return numberOfFoundChars()*4;
     }
 
+    @Override
+    public Boolean isMet() {
+        return numberOfFoundChars() > 0;
+    }
 }

@@ -30,4 +30,24 @@ public class NumbersTest {
         assertThat(new Numbers("1abc2ABC").score(), is(8));
     }
 
+    @Test
+    public void testIsMetWithEmptyString(){
+        assertThat(new Numbers("").isMet(), is(false));
+    }
+
+    @Test
+    public void testIsMetWithNumericString(){
+        assertThat(new Numbers("1").isMet(), is(true));
+    }
+
+    @Test
+    public void testIsMetWithAlphaString(){
+        assertThat(new Numbers("a").isMet(), is(false));
+    }
+
+    @Test
+    public void testIsMetWithSymbolString(){
+        assertThat(new Numbers("@").isMet(), is(false));
+    }
+
 }

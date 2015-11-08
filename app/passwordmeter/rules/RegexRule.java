@@ -8,20 +8,20 @@ import java.util.regex.Pattern;
  */
 public abstract class RegexRule implements Rule{
 
-    private String a;
+    private String s;
     private String regex;
 
-    public RegexRule(String a){
-        this.a = a;
+    public RegexRule(String s){
+        this.s = s;
     }
 
     @Override
     public Integer score() {
-        return (a.length()-numberOfFoundChars())*2;
+        return (s.length()-numberOfFoundChars())*2;
     }
 
     public Integer numberOfFoundChars() {
-        Matcher matcher = Pattern.compile(getRegex()).matcher(a);
+        Matcher matcher = Pattern.compile(getRegex()).matcher(s);
 
         int letters = 0;
         while (matcher.find())
