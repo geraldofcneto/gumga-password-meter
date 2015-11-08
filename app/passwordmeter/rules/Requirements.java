@@ -24,7 +24,7 @@ public class Requirements implements Rule{
         rules.add(new Symbols(s));
         rules.add(new MinimumNumberOfChars(s));
 
-        return (int) rules.stream().filter(Requirement::isMet).count();
+        return (int) rules.stream().filter(Requirement::isMet).count() * 2;
     }
 
     @Override

@@ -17,26 +17,27 @@ public class RequirementsTest {
 
     @Test
     public void testWithAlphaString(){
-        assertThat(new Requirements("a").score(), is(1));
+        assertThat(new Requirements("a").score(), is(2));
     }
 
     @Test
     public void testWithAlphaNumericString(){
-        assertThat(new Requirements("a1").score(), is(2));
+        assertThat(new Requirements("a1").score(), is(4));
     }
 
     @Test
     public void testWithMixedCaseAlphaNumericString(){
-        assertThat(new Requirements("aA1").score(), is(3));
+        assertThat(new Requirements("aA1").score(), is(6));
     }
 
     @Test
     public void testWithMixedCaseAlphaNumericStringWithSymbols(){
-        assertThat(new Requirements("aA1!").score(), is(4));
+        assertThat(new Requirements("aA1!").score(), is(8));
     }
 
     @Test
     public void testWithLongMixedCaseAlphaNumericStringWithSymbols(){
-        assertThat(new Requirements("abcABC1!").score(), is(5));
+        assertThat(new Requirements("abcABC1!").score(), is(10));
     }
+
 }
