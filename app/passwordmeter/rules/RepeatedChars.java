@@ -1,10 +1,7 @@
 package passwordmeter.rules;
 
 import java.io.ByteArrayInputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -24,9 +21,20 @@ public class RepeatedChars implements Rule {
     }
 
     private int repetitions() {
-//        s.chars().collect(Collectors.groupingBy(Function.identity()));
+        char[] charArray = s.toCharArray();
+        Map<Character, Integer> amount = new HashMap<>();
+        for (int i = 0; i < charArray.length; i++) {
+            if(!amount.containsKey(charArray[i]) )
+                amount.put(charArray[i], 0);
+            amount.put(charArray[i], amount.get(charArray[i]) + 1);
+        }
 
-        return 0;
+        int repetitions = 0;
+        for (Map.Entry<Character, Integer> c : amount.entrySet())
+            if (c.getValue() > 1)
+                repetitions += c.getValue();
+
+        return repetitions;
     }
 
     @Override

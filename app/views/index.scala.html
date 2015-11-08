@@ -1,7 +1,32 @@
-@(message: String)
+<!DOCTYPE html>
+<html class=no-js>
 
-@main("Welcome to Play") {
+    <head>
+        <meta charset=utf-8>
+        <title>Gumga PasswordMeter</title>
+        <meta name=description content="">
+        <meta name=viewport content="width=device-width,initial-scale=1">
+        <link rel="shortcut icon" href="@routes.Assets.versioned("images/favicon.b25e58c4.ico")"">
+        <link rel=apple-touch-icon href="@routes.Assets.versioned("images/apple-touch-icon.9727d3c2.png")">
+            <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel=stylesheet href="@routes.Assets.versioned("stylesheets/vendor.9f75b93c.css")">
+        <link rel=stylesheet href="@routes.Assets.versioned("stylesheets/main.b242274c.css")">
+        <script src="@routes.Assets.versioned("javascripts/vendor/modernizr.fbe20327.js")"></script>
 
-    @play20.welcome(message, style = "Java")
-
-}
+<body>
+    <div class=container>
+        <div class=header>
+            <h3 class=text-muted>Gumga PasswordMeter</h3> </div>
+        <div class="row marketing">
+            <div class=col-lg-6>
+                <h4>Password strength</h4>
+                <p>Insert here your password to know how strong it is</p>
+                <input id=password> <span class="label label-default" id=score></span> <span class="label label-primary" id=classification></span>					</div>
+        </div>
+        <div class=footer>
+            <p><span class="glyphicon glyphicon-cog"></span> from Geraldo Castro</p>
+        </div>
+    </div>
+    <script src="@routes.Assets.versioned("javascripts/vendor.baff0332.js")"></script>
+    <script src="@routes.Assets.versioned("javascripts/plugins.19a1d77b.js")"></script>
+    <script src="@routes.Assets.versioned("javascripts/main.7fd3c11f.js")"></script>

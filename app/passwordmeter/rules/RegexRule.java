@@ -17,7 +17,10 @@ public abstract class RegexRule implements Rule{
 
     @Override
     public Integer score() {
-        return (s.length()-numberOfFoundChars())*2;
+        Integer found = numberOfFoundChars();
+        if (found == 0)
+            return 0;
+        return (s.length()- found)*2;
     }
 
     public Integer numberOfFoundChars() {

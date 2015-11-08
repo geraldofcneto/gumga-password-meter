@@ -1,7 +1,5 @@
 package passwordmeter.rules;
 
-import sun.plugin.dom.css.CSSRule;
-
 import java.util.function.Predicate;
 
 /**

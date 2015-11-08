@@ -18,6 +18,6 @@ public class ConsecutiveNumbers extends ConsecutiveChars {
 
     @Override
     public String description() {
-        return null;
+        return "Consecutive Numbers";
     }
 }

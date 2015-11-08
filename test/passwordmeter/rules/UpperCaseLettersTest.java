@@ -26,7 +26,7 @@ public class UpperCaseLettersTest {
     public void testNumberOfUpperCaseLetters_withoutUppercaseLetters_score0() throws Exception {
         UpperCaseLetters upperCaseLetters = new UpperCaseLetters("abcde12345!@#$~");
         assertThat(upperCaseLetters.numberOfFoundChars(), is(0));
-        assertThat(upperCaseLetters.score(), is(30));
+        assertThat(upperCaseLetters.score(), is(0));
     }
 
     @Test
@@ -52,5 +52,12 @@ public class UpperCaseLettersTest {
     @Test
     public void testIsMetWithSymbolString(){
         assertThat(new UpperCaseLetters("@").isMet(), is(false));
+    }
+
+    @Test
+    public void testIsMetWithCompleteNumericString(){
+        UpperCaseLetters upperCaseLetters = new UpperCaseLetters("123456789");
+        assertThat(upperCaseLetters.isMet(), is(false));
+        assertThat(upperCaseLetters.score(), is(0));
     }
 }

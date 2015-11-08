@@ -20,4 +20,14 @@ public class RepeatedCharsTest {
         assertThat(new RepeatedChars("aa").score(), is(-4));
     }
 
+    @Test
+    public void testWith2RepeatedElementString() {
+        assertThat(new RepeatedChars("aabb").score(), is(-8));
+    }
+
+    @Test
+    public void testWith2DistinctElements() {
+        assertThat(new RepeatedChars("ab").score(), is(0));
+    }
+
 }
